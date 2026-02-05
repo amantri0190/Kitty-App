@@ -50,7 +50,8 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       borderWidth: {
-        hairline: hairlineWidth(),
+        // hairline: hairlineWidth(),
+        hairline: 0.5,
       },
       keyframes: {
         "accordion-down": {
