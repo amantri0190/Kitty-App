@@ -50,8 +50,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       borderWidth: {
-        // hairline: hairlineWidth(),
-        hairline: 0.5,
+        hairline: hairlineWidth(),
       },
       keyframes: {
         "accordion-down": {
@@ -72,5 +71,5 @@ module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
