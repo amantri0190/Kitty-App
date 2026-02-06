@@ -11,6 +11,7 @@ import "./global.css";
 
 import Splash from "@/components/splash/Splash";
 import { useColorScheme } from "@/hooks/use-color-scheme";
+import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 
@@ -22,6 +23,11 @@ export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [ready, setReady] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [fontsLoaded] = useFonts({
+    CinzelRegular: require("../assets/fonts/Cinzel-Regular.ttf"),
+    CinzelMedium: require("../assets/fonts/Cinzel-Medium.ttf"),
+    CinzelBold: require("../assets/fonts/Cinzel-Bold.ttf"),
+  });
 
   useEffect(() => {
     const prepare = async () => {
@@ -35,7 +41,7 @@ export default function RootLayout() {
       }
 
       const elapsed = Date.now() - start;
-      const minTime = 1000000;
+      const minTime = 30000;
 
       if (elapsed < minTime) {
         await new Promise((r) => setTimeout(r, minTime - elapsed));
@@ -50,6 +56,9 @@ export default function RootLayout() {
     return <Splash />;
   }
 
+  if (!fontsLoaded || !ready) {
+    return <Splash />;
+  }
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <Stack>

@@ -1,8 +1,32 @@
 import { LinearGradient } from "expo-linear-gradient";
-import React from "react";
-import { Image, ImageBackground, Text, View } from "react-native";
+import React, { useEffect, useRef } from "react";
+import { Animated, Image, ImageBackground, Text, View } from "react-native";
 
 const Splash = () => {
+  const dot1 = useRef(new Animated.Value(0.3)).current;
+  const dot2 = useRef(new Animated.Value(0.3)).current;
+  const dot3 = useRef(new Animated.Value(0.3)).current;
+
+  useEffect(() => {
+    const animateDot = (dot: Animated.Value) =>
+      Animated.sequence([
+        Animated.timing(dot, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+        Animated.timing(dot, {
+          toValue: 0.3,
+          duration: 300,
+          useNativeDriver: true,
+        }),
+      ]);
+
+    Animated.loop(
+      Animated.sequence([animateDot(dot1), animateDot(dot2), animateDot(dot3)]),
+    ).start();
+  }, []);
+
   return (
     <View className="flex-1 bg-[#121418]">
       {/* Background Image */}
@@ -38,12 +62,20 @@ const Splash = () => {
           />
         </View>
 
-        <Text className="mt-10 text-[#cc9900] text-[30px] tracking-[8px] font-bold text-center leading-[40px]">
+        <Text
+          style={{ fontFamily: "CinzelBold" }}
+          // className="mt-10 text-[#cc9900] text-[30px] tracking-[8px] font-bold text-center leading-[40px]"
+          className="mt-10 text-[#cc9900] text-[30px] tracking-[8px] text-center leading-[40px]"
+        >
           PUNJAB{"\n"}JEWELLERS
         </Text>
         <View className="flex-row items-center mt-2">
           <View className="w-12 h-[1px] bg-[#cc9900]/40" />
-          <Text className="mx-4 text-[#cc9900]/80 text-sm tracking-[4px] font-medium">
+          <Text
+            style={{ fontFamily: "CinzelMedium" }}
+            // className="mx-4 text-[#cc9900]/80 text-sm tracking-[4px] font-medium"
+            className="mx-4 text-[#cc9900]/80 text-sm tracking-[4px]"
+          >
             SINCE 1996
           </Text>
           <View className="w-12 h-[1px] bg-[#cc9900]/40" />
@@ -58,10 +90,24 @@ const Splash = () => {
         </Text>
 
         {/* Loading Dots */}
-        <View className="flex-row mt-8 gap-2">
+        {/* <View className="flex-row mt-8 gap-2">
           <View className="w-1.5 h-1.5 rounded-full bg-[#cc9900]/70" />
           <View className="w-1.5 h-1.5 rounded-full bg-[#cc9900]/40" />
           <View className="w-1.5 h-1.5 rounded-full bg-[#cc9900]/15" />
+        </View> */}
+        <View className="flex-row mt-8 gap-2">
+          <Animated.View
+            style={{ opacity: dot1 }}
+            className="w-1.5 h-1.5 rounded-full bg-[#cc9900]"
+          />
+          <Animated.View
+            style={{ opacity: dot2 }}
+            className="w-1.5 h-1.5 rounded-full bg-[#cc9900]"
+          />
+          <Animated.View
+            style={{ opacity: dot3 }}
+            className="w-1.5 h-1.5 rounded-full bg-[#cc9900]"
+          />
         </View>
       </View>
     </View>
