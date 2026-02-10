@@ -1,5 +1,5 @@
-import AppDrawer from "@/components/AppDrawer";
-import Header from "@/components/Header";
+import AppDrawer from "@/components/drawer/AppDrawer";
+import Header from "@/components/drawer/Header";
 import { useAuth } from "@/context/AuthContext";
 import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";

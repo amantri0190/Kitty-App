@@ -40,7 +40,7 @@ export default function PublicLayout() {
         options={{
           title: "GOLD PLAN",
           tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="gold" size={size} color={color} />
+            <MaterialCommunityIcons name="gold" size={32} color={color} />
           ),
         }}
       />
