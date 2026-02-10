@@ -30,7 +30,7 @@ const Splash = () => {
   return (
     <View className="flex-1 bg-[#121418]">
       <ImageBackground
-        source={require("../../assets/images/splash.svg")}
+        source={require("../../assets/images/splash.png")}
         resizeMode="cover"
         className="absolute inset-0 opacity-30"
       />
@@ -45,10 +45,10 @@ const Splash = () => {
       <View className="absolute bottom-10 left-8 w-10 h-10 border-b border-l border-[#cc9900]/15" />
       <View className="absolute bottom-10 right-8 w-10 h-10 border-b border-r border-[#cc9900]/15" />
 
-      <View className="flex-1 items-center justify-center px-6">
-        <View className="w-[140px] h-[140px] rounded-2xl border-2 border-[rgb(204,153,0)] bg-white items-center justify-center p-4">
+      <View className="items-center justify-center flex-1 px-6">
+        <View className="w-[120px] h-[120px] rounded-2xl border-2 border-[rgb(204,153,0)] bg-white items-center justify-center p-4">
           <Image
-            source={require("../../assets/images/PunjabLogo.svg")}
+            source={require("../../assets/images/PunjabLogo.png")}
             resizeMode="contain"
             className="w-full h-full"
           />
@@ -71,12 +71,12 @@ const Splash = () => {
           <View className="w-12 h-[1px] bg-[#cc9900]/40" />
         </View>
       </View>
-      <View className="pb-16 items-center">
+      <View className="items-center pb-16">
         <View className="w-12 h-[1px] bg-[#cc9900]/30 mb-4" />
         <Text className="text-[#cc9900]/60 text-[10px] tracking-[6px] font-light">
           KEWEL SINGH
         </Text>
-        <View className="flex-row mt-8 gap-2">
+        <View className="flex-row gap-2 mt-8">
           <Animated.View
             style={{ opacity: dot1 }}
             className="w-1.5 h-1.5 rounded-full bg-[#cc9900]"
