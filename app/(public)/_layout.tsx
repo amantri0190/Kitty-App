@@ -1,6 +1,5 @@
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import { Tabs } from "expo-router";
 export default function PublicLayout() {
   return (
@@ -19,7 +18,7 @@ export default function PublicLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
+          title: "HOME",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="home" size={size} color={color} />
           ),
@@ -45,6 +44,13 @@ export default function PublicLayout() {
           ),
         }}
       />
+      {/* <Tabs.Screen
+        name="GoldPlan"
+        options={{
+          title: "GOLD PLAN",
+          tabBarButton: (props) => <GoldPlanTabButton {...props} />,
+        }}
+      /> */}
 
       <Tabs.Screen
         name="Gifting"
