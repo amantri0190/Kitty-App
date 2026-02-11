@@ -239,10 +239,10 @@
 // );
 
 import Header from "@/components/drawer/Header";
+import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { useEffect, useState } from "react";
 import { ActivityIndicator, Text, View } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
 
 export default function TabsHome() {
   const [goldPrice, setGoldPrice] = useState("—");

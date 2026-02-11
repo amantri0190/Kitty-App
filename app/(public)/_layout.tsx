@@ -1,4 +1,6 @@
+import AppDrawer from "@/components/drawer/AppDrawer";
 import KittyPlanPopup from "@/components/popup/KittyPlanPopup";
+import { DrawerProvider } from "@/context/DrawerContext";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 import FontAwesome5 from "@expo/vector-icons/FontAwesome5";
 import { Tabs } from "expo-router";
@@ -8,7 +10,7 @@ export default function PublicLayout() {
   const [showKittyPopup, setShowKittyPopup] = useState(true);
 
   return (
-    <>
+    <DrawerProvider>
       <Tabs
         screenOptions={{
           headerShown: false,
@@ -71,11 +73,12 @@ export default function PublicLayout() {
           }}
         />
       </Tabs>
+      <AppDrawer />
 
       {/* 🔥 GLOBAL KITTY POPUP OVER EVERYTHING */}
       {showKittyPopup && (
         <KittyPlanPopup onClose={() => setShowKittyPopup(false)} />
       )}
-    </>
+    </DrawerProvider>
   );
 }
