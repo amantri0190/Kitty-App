@@ -1,4 +1,5 @@
 import AppDrawer from "@/components/drawer/AppDrawer";
+import Header from "@/components/drawer/Header";
 import KittyPlanPopup from "@/components/popup/KittyPlanPopup";
 import { DrawerProvider } from "@/context/DrawerContext";
 import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";

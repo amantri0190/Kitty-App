@@ -17,6 +17,7 @@ export default function RootLayout() {
     CinzelMedium: require("../assets/fonts/Cinzel-Medium.ttf"),
     CinzelBold: require("../assets/fonts/Cinzel-Bold.ttf"),
   });
+  
 
   useEffect(() => {
     const prepare = async () => {
