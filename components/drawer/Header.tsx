@@ -1,6 +1,6 @@
 import { useDrawer } from "@/context/DrawerContext";
 import { Ionicons } from "@expo/vector-icons";
-import { Image, Pressable, View } from "react-native";
+import { Pressable, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function Header() {
@@ -17,11 +17,11 @@ export default function Header() {
             <Ionicons name="menu" size={26} color="#111" />
           </Pressable>
 
-          <Image
+          {/* <Image
             source={require("../../assets/images/PunjabLogo.png")}
             className="w-10 h-10"
             resizeMode="contain"
-          />
+          /> */}
         </View>
 
         {/* Right Icons */}
